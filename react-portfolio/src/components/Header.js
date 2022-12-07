@@ -7,7 +7,7 @@ function Header({ currentPage, handlePageChange }) {
   return (
     <Navbar bg="light" expand="lg">
       <Container>
-        <Navbar.Brand onClick={() => handlePageChange('About')}>Matt Thomsen</Navbar.Brand>
+        <Navbar.Brand id="matt-nav" onClick={() => handlePageChange('About')}>Matt Thomsen</Navbar.Brand>
         <Navbar id="basic-navbar-nav">
           <Nav className="justify">
             <Nav.Link onClick={() => handlePageChange('About')} className={currentPage === 'About' ? 'active' : ''}>About Me</Nav.Link>

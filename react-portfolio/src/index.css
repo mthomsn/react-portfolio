@@ -11,3 +11,55 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#matt-nav {
+  font-size: 36px;
+}
+
+#about-h {
+  font-size: 30px;
+  margin-top: 10px;
+}
+
+#about-p {
+  margin: 20px 10%;
+}
+
+.portfolio-container {
+  justify-content: center;
+  gap: 15px;
+}
+
+#project-card {
+  margin-top: 10px;
+  display: flex;
+}
+
+.project-body {
+  height: 100%;
+  /* display: flex; */
+  align-self: stretch;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#project-img {
+  margin-top: 5px;
+}
+
+.project-btn-container {
+  align-self: flex-end;
+}
+
+.project-btn {
+  margin: 5px;
+  /* position: relative; */
+  /* bottom: 0px; */
+  align-self: flex-end;
+}
+
+#contact-form {
+  display: block;
+  margin: 10px auto;
+  width: 65%;
+}

@@ -1,2 +1,2 @@
 # react-portfolio
-Personal portfolio made with 
+Personal portfolio made with React
