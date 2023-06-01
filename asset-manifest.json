@@ -1,13 +1,17 @@
 {
   "files": {
-    "main.css": "/react-portfolio/static/css/main.d952ab0e.css",
-    "main.js": "/react-portfolio/static/js/main.0a48ba63.js",
+    "main.css": "/react-portfolio/static/css/main.d203c1b1.css",
+    "main.js": "/react-portfolio/static/js/main.f61a842e.js",
+    "static/media/eventify-image.png": "/react-portfolio/static/media/eventify-image.3d77ae61f92afa5f609d.png",
+    "static/media/Poo.png": "/react-portfolio/static/media/Poo.c42840280ac7272a34c7.png",
+    "static/media/weather-dashboard-image.png": "/react-portfolio/static/media/weather-dashboard-image.20fd4eb48010020fa3cd.png",
+    "static/media/passwordGenerator.jpg": "/react-portfolio/static/media/passwordGenerator.64311eb701a2808d826f.jpg",
     "index.html": "/react-portfolio/index.html",
-    "main.d952ab0e.css.map": "/react-portfolio/static/css/main.d952ab0e.css.map",
-    "main.0a48ba63.js.map": "/react-portfolio/static/js/main.0a48ba63.js.map"
+    "main.d203c1b1.css.map": "/react-portfolio/static/css/main.d203c1b1.css.map",
+    "main.f61a842e.js.map": "/react-portfolio/static/js/main.f61a842e.js.map"
   },
   "entrypoints": [
-    "static/css/main.d952ab0e.css",
-    "static/js/main.0a48ba63.js"
+    "static/css/main.d203c1b1.css",
+    "static/js/main.f61a842e.js"
   ]
 }
