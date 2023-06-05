@@ -23,7 +23,7 @@ function Resume() {
                 <Accordion.Item eventKey="0" className="exp-item">
                     <Accordion.Header className="exp-header">Teaching Assistant @ EdX</Accordion.Header>
                     <Accordion.Body className="exp-body">
-                        <p></p>
+                        <p>Assist and encouge students, assist instructor with running class.</p>
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
@@ -41,7 +41,7 @@ function Resume() {
                 <Accordion.Item eventKey="0" className="exp-item">
                     <Accordion.Header className="exp-header">Student @ University of Texas Coding Bootcamp</Accordion.Header>
                     <Accordion.Body className="exp-body">
-                        <p>Full stack coding bootcamp. Learned the MERN stack and basics of building full stack web applications</p>
+                        <p>Full stack coding bootcamp. <br />Learned the MERN stack and developed skills for building full stack web applications</p>
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>

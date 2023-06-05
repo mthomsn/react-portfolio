@@ -10,21 +10,19 @@ export default function Expertise() {
                     <h2 className="expertise-h2">Software<br /> Development</h2>
                     <div className="thicc-line"></div>
                     <p className="expertise-p">
-                        Experienced in OOP and agile development. Passionate about solving problems and learning. <br />Javascript, Python.
+                        I create elegant and efficient solutions that bring ideas to life, while continuously adapting to evolving technologies and best practices. 
                     </p>
                 </div>
                 <div className="expertise-div">
                     <h2 className="expertise-h2">Full Stack Dev</h2>
                     <p className="expertise-p">
-                        I enjoy building responsive and intuitive user interfaces.
-                        <br />HTML, CSS, Javascript, React, Next.js, Express.js, MongoDb, and mySQL.
+                        <br />HTML, CSS, Javascript, React, Next.js, Node.js, Express.js, MongoDB, and mySQL.
                     </p>
                 </div>
                 <div className="expertise-div">
                     <h2 className="expertise-h2">Tools</h2>
                     <p className="expertise-p">
-                        I am familiar with various tools and technologies.
-                        <br />Git, Github, Terminal, Bootstrap.
+                        <br />Git, Github, Terminal, Bootstrap, Visual Studio Code, Stack Overflow, and Google. 
                     </p>
                 </div>
             </Container>
