@@ -1,13 +1,14 @@
 # Matt Thomsen Portfolio
 
-Challenge 20: Build a Portfolio using React.
-
 [Please take a look!](https://mthomsn.github.io/react-portfolio/)
 
 ## Future Development
 - Overhaul UI
 - Fix functionality of contact form
 - Add more projects
+
+## Credits
+I was inspired by [Tamal Sen's website](https://tamalsen.dev/#hero-section) and I tried to recreate with my own twist!
 
 ## License
 MIT License
