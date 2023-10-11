@@ -3,8 +3,7 @@
 [Please take a look!](https://mthomsn.github.io/react-portfolio/)
 
 ## Future Development
-- Overhaul UI
-- Fix functionality of contact form
+- Make reactive to different screen sizes
 - Add more projects
 
 ## Credits
