@@ -21,7 +21,7 @@ function Resume() {
 
             <Accordion defaultActiveKey="1" className='exp-accordion'>
                 <Accordion.Item eventKey="0" className="exp-item">
-                    <Accordion.Header className="exp-header">Teaching Assistant @ EdX</Accordion.Header>
+                    <Accordion.Header className="exp-header">Open Source || Personal Development (2022 - Present)</Accordion.Header>
                     <Accordion.Body className="exp-body">
                         <p></p>
                     </Accordion.Body>
@@ -30,9 +30,10 @@ function Resume() {
 
             <Accordion defaultActiveKey="1"  className='exp-accordion'>
                 <Accordion.Item eventKey="0" className="exp-item">
-                    <Accordion.Header className="exp-header">Sales Associate @ The Home Depot (2022 - Present)</Accordion.Header>
+                    <Accordion.Header className="exp-header">Sales Associate @ The Home Depot (2023 - Present)</Accordion.Header>
                     <Accordion.Body className="exp-body">
-                        <p>Assist customers with any needs, stock and maintain supplies.</p>
+                        <p>Utilize company systems to insure inventory accuracy and availability.</p>
+                        <p>Communications coordinator for the associate fund committee.</p>
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>

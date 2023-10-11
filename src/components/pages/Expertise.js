@@ -10,21 +10,20 @@ export default function Expertise() {
                     <h2 className="expertise-h2">Software<br /> Development</h2>
                     <div className="thicc-line"></div>
                     <p className="expertise-p">
-                        Experienced in OOP and agile development. Passionate about solving problems and learning. <br />Javascript, Python.
+                        Passionate about solving problems, learning how things work, and building useful programs.<br />Javascript, Go, C++.
                     </p>
                 </div>
                 <div className="expertise-div">
-                    <h2 className="expertise-h2">Full Stack Dev</h2>
+                    <h2 className="expertise-h2">Back-end Developer</h2>
                     <p className="expertise-p">
-                        I enjoy building responsive and intuitive user interfaces.
-                        <br />HTML, CSS, Javascript, React, Next.js, Express.js, MongoDb, and mySQL.
+                        Experienced with data modeling, RESTful API's, testing, and debugging. 
+                        <br />Node.js, mySQL, Go, MongoDB, Jest.
                     </p>
                 </div>
                 <div className="expertise-div">
-                    <h2 className="expertise-h2">Tools</h2>
+                    <h2 className="expertise-h2">Lifelong learner</h2>
                     <p className="expertise-p">
-                        I am familiar with various tools and technologies.
-                        <br />Git, Github, Terminal, Bootstrap.
+                        I enjoy the process of learning new technologies, reflecting on how I can make my software better, and engaging with others to learn and grow.
                     </p>
                 </div>
             </Container>

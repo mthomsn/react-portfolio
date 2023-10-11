@@ -14,13 +14,14 @@ export default function About() {
                     <h1 id="about-h">LET ME INTRODUCE MYSELF</h1><br />
                     <p id="about-p">
                     {/* I fell in love with programming while trying to find solutions to problems at work.<br /><br /> */}
-                    I’m a driven software engineer with a love for problem solving and an appreciation for the art of programming. In my professional journey I have gained expertise in various programming languages and tools, while striving to develop robust and scalable software solutions.<br /><br />
+                    I’m a software engineer with a love for solving problems. {/*In my professional journey I have gained expertise in various programming languages and tools, while striving to develop a deeper understanding of how software works.*/}<br /><br />
 
-                    Beyond coding, I have various interests that bring joy to my life. Cooking is one of my favorite pastimes, I find delight in experimenting with flavors and techniques to create delicious meals. It allows me to bring the same problem solving mindset to the kitchen while spending quality time with friends and family.<br /><br />
+                    I came into software from a non-traditional background. I worked in supply chain for a hospital and where I found a scripting program called Macro Express and I created several small scripts to automate some of the repetitive tasks. These small scripts led to a 80% reduction in our monthly bills on hold.<br /><br /> From there I fell in love with the process of programming and I made the decision to pursue software development full time.<br /><br />
 
-                    I believe in maintaining a balanced lifestyle. Spending quality time with my significant other and family is of utmost importance to me. Whether it's engaging in meaningful conversations or simply enjoying each other's company, these connections fuel my happiness.<br /><br />
+                    Beyond coding, I have various interests that bring joy to my life. Cooking is one of my favorite pastimes, I find delight in experimenting with flavors and techniques. It allows me to bring the same problem solving mindset to the kitchen while spending quality time with friends and family.<br /><br />
 
-                    To stay physically and mentally fit, I prioritize staying active and exercising regularly. Taking care of my well-being helps me maintain focus and productivity, enabling me to approach software challenges with a clear mind.<br /><br />
+        {/*I believe in maintaining a balanced lifestyle. Spending quality time with my significant other and family is of utmost importance to me. Whether it's engaging in meaningful conversations or simply enjoying each other's company, these connections fuel my happiness.<br /><br />*/}
+
                 </p>
                 </Col>
                 <Col id="about-header-image">
