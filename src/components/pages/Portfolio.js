@@ -4,6 +4,7 @@ import Project from './Project';
 import passwordGeneratorImage from '../../assets/passwordGenerator.jpg';
 import eventifyImage from '../../assets/eventify-image.png';
 import weatherDashboardImage from '../../assets/weather-dashboard-image.png';
+import emsDashboardImage from '../../assets/EMS_dashboard.png';
 
 const projects = [
     {
@@ -13,6 +14,14 @@ const projects = [
         // technologies: 'HTML, CSS, JavaScript',
         link: 'https://tisforthomas.github.io/team-project-one/',
         repo: 'https://github.com/TIsForThomas/team-project-one',
+    },
+    {
+        name: 'Employee Management System',
+        description: 'Application targeted at small buisness owners to track basic employee data',
+        image: emsDashboardImage,
+        // technologies: 'HTML, CSS, JavaScript',
+        link: 'https://github.com/mthomsn/Employee-Management-System',
+        repo: 'https://github.com/mthomsn/Employee-Management-System',
     },
     {
         name: 'Weather Dashboard',

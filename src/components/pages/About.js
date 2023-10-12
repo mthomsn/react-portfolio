@@ -16,7 +16,9 @@ export default function About() {
                     {/* I fell in love with programming while trying to find solutions to problems at work.<br /><br /> */}
                     I’m a software engineer with a love for solving problems. {/*In my professional journey I have gained expertise in various programming languages and tools, while striving to develop a deeper understanding of how software works.*/}<br /><br />
 
-                    I came into software from a non-traditional background. I worked in supply chain for a hospital and where I found a scripting program called Macro Express and I created several small scripts to automate some of the repetitive tasks. These small scripts led to a 80% reduction in our monthly bills on hold.<br /><br /> From there I fell in love with the process of programming and I made the decision to pursue software development full time.<br /><br />
+                    I came into software from a non-traditional background. I worked in supply chain for a hospital where I found a scripting program called Macro Express and I created several small scripts to automate some of the repetitive tasks. These small scripts led to a 80% reduction in our monthly bills on hold.<br /><br /> 
+
+                    From there I fell in love with the process of programming and I made the decision to pursue software development full time. Since making that decision I have worked with small teams to build several fullstack web based applications.<br /><br />
 
                     Beyond coding, I have various interests that bring joy to my life. Cooking is one of my favorite pastimes, I find delight in experimenting with flavors and techniques. It allows me to bring the same problem solving mindset to the kitchen while spending quality time with friends and family.<br /><br />
 
