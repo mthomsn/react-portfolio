@@ -45,6 +45,13 @@ return (
                 onMouseLeave={mouseLeave}>
                 <span className="navbar-span">// </span>experience
             </a>
+            <a 
+                className='navbar-link'
+                href='#footer-container'
+                onMouseEnter={mouseEnter} 
+                onMouseLeave={mouseLeave}>
+                <span className="navbar-span">// </span>contact
+            </a>
         </Nav>
         </Navbar>
     </Container>

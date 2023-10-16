@@ -21,28 +21,42 @@ function Resume() {
 
             <Accordion defaultActiveKey="1" className='exp-accordion'>
                 <Accordion.Item eventKey="0" className="exp-item">
-                    <Accordion.Header className="exp-header">Open Source || Personal Development (2022 - Present)</Accordion.Header>
+                    <Accordion.Header className="exp-header">Open Source (2022 - Present)</Accordion.Header>
                     <Accordion.Body className="exp-body">
-                        <p></p>
+                        <p><u>Redwood | Ecommerce Web Application</u><br />                          
+                        - Created Apollo server with GraphQL schema to query and mutate MongoDB database.<br />
+                        - Utilized React state with Apollo client to send requests to server.<br />
+                        - Built object models using Mongoose to enforce schema and maintain data integrity.<br />
+                        - Implemented search function with utilizing React state.<br />
+                        - Applied user authentication to allow personal account management and security.<br /><br /></p>
+                
+
+                        <p><u>Employee Management System</u><br />
+                        - Created wire-frame for initial concept.<br /> 
+                        - Implemented the Model-View-Controller (MVC) paradigm to provide responsive web application.<br />
+                        - Built Node server using Express to handle user authentication.<br />
+                        - Utilized MySQL to build database to store relevant employee data.<br />
+                        - Successfully deployed production built application using Heroku.<br /><br /></p>
+
+                        <p><u>Eventify | Local Event Finder</u>
+                        <p>- Utilized Javascript to call SeatGeek API to find events based on given location.<br />
+                        - Developed application using agile methods.<br />
+                        - Worked with team using Git as version control.</p ></p>
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
 
-            <Accordion defaultActiveKey="1"  className='exp-accordion'>
-                <Accordion.Item eventKey="0" className="exp-item">
-                    <Accordion.Header className="exp-header">Sales Associate @ The Home Depot (2023 - Present)</Accordion.Header>
-                    <Accordion.Body className="exp-body">
-                        <p>Utilize company systems to insure inventory accuracy and availability.</p>
-                        <p>Communications coordinator for the associate fund committee.</p>
-                    </Accordion.Body>
-                </Accordion.Item>
-            </Accordion>
 
             <Accordion defaultActiveKey="1"  className='exp-accordion'>
                 <Accordion.Item eventKey="0" className="exp-item">
-                    <Accordion.Header className="exp-header">Student @ University of Texas Coding Bootcamp</Accordion.Header>
+                    <Accordion.Header className="exp-header">Student @ University of Texas Coding Bootcamp (2022)</Accordion.Header>
                     <Accordion.Body className="exp-body">
-                        <p>Full stack coding bootcamp. Learned the MERN stack and basics of building full stack web applications</p>
+                        <p>- Programming foundational concepts such as HTML, CSS, Git, Javascript, API's, and JSON.<br />
+                            - Programming technical skills such as Node, ES6, Object-oriented programming, Express, MySQL, MVC paradigm, Sequelize, Testing, and Agile Development.<br />
+                            - Current tools such as Progressive Web Applications, React, NoSQL, MongoDB, and the MERN stack.<br />
+                            - Developed skills to learn and implement technologies quickly.<br />
+                            - Gained foundational understanding on how applications are created.
+                            - Worked with teams using agile methods to develop full stack applications.</p>
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>
@@ -51,11 +65,17 @@ function Resume() {
                 <Accordion.Item eventKey="0" className="exp-item">
                     <Accordion.Header className="exp-header">Supply Chain @ St. David's Healthcare (2019 - 2022)</Accordion.Header>
                     <Accordion.Body className="exp-body">
-                        <p><u>Operating Room Internal Control Coordinator</u></p>
-                        <p>Full stack coding bootcamp. Learned the MERN stack and basics of building full stack web applications</p>
+                        <p><u>Operating Room Internal Control Coordinator</u>
+                        <p>- Maintained data integrity between supply chain and hospital clinical software.<br />
+        - Automated tasks using Macro Express to increase productivity, causing an 80% reduction in monthly bills on hold.<br />
+        - Provided communication to operating room staff in regards to supply availability.<br /> 
+        - Worked with cross functional teams to update, maintain, and standardize formatting of physician preference cards.<br />
+        - Worked with cross functional teams to update, maintain, and standardize internal supply chain inventory management systems.</p></p>
 
-                        <p><u>Operating Room Inventory Specialist</u></p>
-                        <p>Full stack coding bootcamp. Learned the MERN stack and basics of building full stack web applications</p>
+                        <p><u>Operating Room Inventory Specialist</u>
+                        <p>- Order, stock, and maintain Operating Room disposable supplies.<br / >
+- Identified and implemented improvements in supply chain processes to meet special/urgent requests.<br />
+- Identified and optimized inventory minimum and maximum, leading to a $50,000 reduction of on hand inventory while maintaining supply availability. </p></p>
                     </Accordion.Body>
                 </Accordion.Item>
             </Accordion>

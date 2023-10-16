@@ -15,7 +15,7 @@ export default function StickyNav() {
         if (window !== undefined) {
         let windowHeight = window.scrollY;
         let viewportHeight = window.innerHeight;
-        let startStick = viewportHeight * 0.9;
+        let startStick = viewportHeight * 0.8;
         // console.log(startStick);
         // window height changed for the demo
         windowHeight > startStick ? setStickyClass('sticky-nav') : setStickyClass('hidden-sticky-nav');
@@ -51,6 +51,10 @@ export default function StickyNav() {
                     className='navbar-link'
                     href='#exp-top-container'
                     onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}><span className="sticky-navbar-span">// </span>experience</a>
+                <a 
+                    className='navbar-link'
+                    href='#footer-container'
+                    onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}><span className="sticky-navbar-span">// </span>contact</a>
                 </Nav>
             </Navbar>
         </Container>

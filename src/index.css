@@ -12,6 +12,7 @@
     --green: #7EC6AC;
     --dark-purple: #3D1274;
     --light-purple: #6A18D3;
+    --experiment-purple: #1d1734;
 }
 
 #root {
@@ -330,7 +331,7 @@ code {
 }
 
 .exp-accordion {
-    --bs-accordion-bg: var(--dark-purple) !important;
+    --bs-accordion-bg: var(--experiment-purple) !important;
     --bs-accordion-color: var(--white) !important;
 }
 
