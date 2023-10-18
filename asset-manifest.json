@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-portfolio/static/css/main.a85a8d28.css",
+    "main.css": "/react-portfolio/static/css/main.634ce202.css",
     "main.js": "/react-portfolio/static/js/main.aec352da.js",
     "static/media/eventify-image.png": "/react-portfolio/static/media/eventify-image.3d77ae61f92afa5f609d.png",
     "static/media/redwood.png": "/react-portfolio/static/media/redwood.9951a6b74a50d398a46b.png",
@@ -10,11 +10,11 @@
     "static/media/EMS_dashboard.png": "/react-portfolio/static/media/EMS_dashboard.614b6d771b4ad4fe3bfe.png",
     "static/media/passwordGenerator.jpg": "/react-portfolio/static/media/passwordGenerator.64311eb701a2808d826f.jpg",
     "index.html": "/react-portfolio/index.html",
-    "main.a85a8d28.css.map": "/react-portfolio/static/css/main.a85a8d28.css.map",
+    "main.634ce202.css.map": "/react-portfolio/static/css/main.634ce202.css.map",
     "main.aec352da.js.map": "/react-portfolio/static/js/main.aec352da.js.map"
   },
   "entrypoints": [
-    "static/css/main.a85a8d28.css",
+    "static/css/main.634ce202.css",
     "static/js/main.aec352da.js"
   ]
 }
