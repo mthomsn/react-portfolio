@@ -26,9 +26,9 @@ export default function App() {
             <header>
                 <h1>Matt Thomsen</h1>
                 <p className="lede">
-                    Student at UT Dallas. I write engineering software for Comet Rocketry, the
-                    university's rocketry team, mostly design tools for our nitrous oxide /
-                    isopropyl alcohol liquid motor.
+                    I'm a student at UT Dallas and a problem solver. I like taking a hard technical
+                    problem apart until I understand it, whether that's a rocket engine injector
+                    or a program written in C.
                 </p>
                 <p className="lede">Looking for a software engineering internship for summer 2027.</p>
                 <nav>
