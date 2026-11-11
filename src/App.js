@@ -26,9 +26,8 @@ export default function App() {
             <header>
                 <h1>Matt Thomsen</h1>
                 <p className="lede">
-                    I'm a student at UT Dallas and a problem solver. I like taking a hard technical
-                    problem apart until I understand it, whether that's a rocket engine injector
-                    or a program written in C.
+                    I'm a student at UT Dallas and a problem solver. I like breaking hard technical
+                    problems into pieces, testing ideas early, and learning from what doesn't work.
                 </p>
                 <p className="lede">Looking for a software engineering internship for summer 2027.</p>
                 <nav>
