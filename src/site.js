@@ -4,7 +4,7 @@ export const email = 'matthewthomsen99@gmail.com';
 
 export const links = [
     { label: 'Email', href: `mailto:${email}` },
-    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/matt-thomsen-2814b3254/' },
+    { label: 'LinkedIn', href: 'https://www.linkedin.com/in/matt-thomsen2/' },
     { label: 'GitHub', href: 'https://github.com/mthomsn' },
 ];
 
