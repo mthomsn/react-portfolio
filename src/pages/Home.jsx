@@ -16,14 +16,14 @@ export default function Home() {
         <div className="sheet">
             <div className="title-block">
                 <div>
-                    <p className="title-part">MT-27</p>
+                    <p className="title-part"><span className="dim">Datasheet ·</span> MT-27</p>
                     <h1>Matt Thomsen</h1>
-                    <p className="title-desc">Embedded and Propulsion Software Engineer, Student Grade</p>
+                    <p className="title-desc">Embedded Engineer, General Problem Solver</p>
                 </div>
                 <div className="title-actions">
                     <a className="btn btn-solid" href={`mailto:${email}`}>Contact</a>
                     {links.slice(1).map((l) => (
-                        <a key={l.label} className="btn" href={l.href} target="_blank" rel="noreferrer">{l.label} ↗</a>
+                        <a key={l.label} className="btn" href={l.href} target="_blank" rel="noreferrer">{l.label} <span className="arr">↗</span></a>
                     ))}
                 </div>
             </div>
