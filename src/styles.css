@@ -64,8 +64,10 @@ h1 { font-weight: 600; letter-spacing: -0.02em; line-height: 1.05; margin: 0; }
 .sec {
     display: flex; align-items: baseline; gap: 14px;
     font-size: 1.15rem; font-weight: 600; letter-spacing: -0.005em;
-    margin: 0 0 16px; padding-bottom: 6px; border-bottom: 2px solid var(--rule);
+    margin: 0 0 16px; padding-bottom: 8px; position: relative;
 }
+/* A short tick instead of a full-width rule: headings stay findable without boxing the page in. */
+.sec::after { content: ''; position: absolute; left: 0; bottom: 0; width: 28px; height: 3px; background: var(--signal); }
 .sub { font-size: 0.98rem; font-weight: 600; margin: 24px 0 8px; }
 .hint { font-family: var(--mono); font-size: 0.75rem; color: var(--soft); margin: -8px 0 8px; }
 
@@ -211,7 +213,7 @@ tbody th { font-weight: 500; width: 32%; background: var(--zebra); }
 .case { display: grid; grid-template-columns: 210px minmax(0, 1fr); gap: 56px; padding-top: 40px; }
 .toc { position: sticky; top: 76px; align-self: start; font-size: 0.85rem; }
 .toc-back { display: inline-block; margin-bottom: 18px; font-family: var(--mono); font-size: 0.78rem; }
-.toc-head { font-weight: 600; margin: 0 0 6px; padding-bottom: 4px; border-bottom: 2px solid var(--rule); }
+.toc-head { font-weight: 600; margin: 0 0 6px; padding-bottom: 4px; }
 .toc ol { list-style: none; margin: 0; padding: 0; }
 .toc li a { display: flex; gap: 10px; padding: 4px 0; color: var(--muted); border-bottom: 1px dotted var(--hair); }
 .toc li a:hover { color: var(--ink); text-decoration: none; }
@@ -239,7 +241,7 @@ tbody th { font-weight: 500; width: 32%; background: var(--zebra); }
 .fig-wide img { max-width: 100%; }
 .fig figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 8px; }
 
-.next { display: block; margin-top: 64px; padding: 20px 0; border-top: 2px solid var(--rule); border-bottom: 2px solid var(--rule); color: var(--ink); }
+.next { display: block; margin-top: 64px; padding: 20px 0; border-top: 1px solid var(--hair); color: var(--ink); }
 .next:hover { text-decoration: none; }
 .next-title { display: block; font-size: 1.4rem; font-weight: 600; margin-top: 4px; }
 .next:hover .next-title { color: var(--signal); }
@@ -278,10 +280,34 @@ tbody th { font-weight: 500; width: 32%; background: var(--zebra); }
 
 .keepy-fig { margin: 40px 0 0; display: flex; flex-direction: column; align-items: center; gap: 6px; }
 .keepy-fig figcaption { font-size: 0.78rem; color: var(--muted); }
-.keepy { display: flex; flex-direction: column; align-items: center; gap: 4px; }
-.ball { font-size: 1.7rem; line-height: 1; animation: kick 0.5s ease-out; }
-@keyframes kick { 0% { transform: translateY(0) rotate(0); } 40% { transform: translateY(-26px) rotate(160deg); } 100% { transform: translateY(0) rotate(360deg); } }
-.keepy-count { font-family: var(--mono); font-size: 0.75rem; color: var(--muted); }
+.keepy { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 20px; align-items: end; width: 100%; max-width: 640px; }
+.field { position: relative; border-bottom: 2px solid var(--rule); touch-action: manipulation; user-select: none;
+    background: repeating-linear-gradient(90deg, transparent 0 23px, var(--hair) 23px 24px) bottom / 100% 8px no-repeat; }
+.ball { position: absolute; left: 0; bottom: 0; width: 34px; height: 34px; padding: 0; font-size: 30px; line-height: 34px;
+    background: none; border: 0; cursor: pointer; will-change: transform; }
+/* Invisible hit area well beyond the ball, so near-misses still count. */
+.ball::before { content: ''; position: absolute; inset: -22px; border-radius: 50%; }
+.ball:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; border-radius: 50%; }
+.field-hint { position: absolute; left: 0; right: 0; top: 40%; text-align: center; font-family: var(--mono); font-size: 0.72rem; color: var(--soft); pointer-events: none; }
+.mcu { width: 220px; height: auto; display: block; }
+.mcu .pcb { fill: var(--fig-bg); stroke: var(--rule); stroke-width: 1.5; }
+.mcu .hole { fill: var(--paper); stroke: var(--soft); }
+.mcu .trace { fill: none; stroke: var(--signal); stroke-width: 1.5; opacity: 0.55; }
+.mcu .ic { fill: #1b1d22; }
+.mcu .ic-dot { fill: #3a3e47; }
+.mcu .lead { fill: var(--soft); }
+.mcu .ic-label { fill: #c9ccd2; font: 600 9px var(--mono); text-anchor: middle; }
+.mcu .disp { fill: #14161a; stroke: var(--rule); }
+.mcu .seg { fill: #2a2420; }
+.mcu .seg.on { fill: #ff6a2b; filter: drop-shadow(0 0 2px #ff6a2b); }
+.mcu .silk { fill: var(--muted); font: 500 7.5px var(--mono); text-anchor: middle; letter-spacing: 0.06em; }
+.mcu .silk-l { text-anchor: start; }
+.mcu .led { stroke: var(--rule); stroke-width: 0.8; }
+.mcu .led.tx { fill: #2c4a2c; }
+.mcu .led.tx.flash { animation: tx 0.25s ease-out; }
+@keyframes tx { 0%, 40% { fill: #4dff6a; filter: drop-shadow(0 0 3px #4dff6a); } 100% { fill: #2c4a2c; } }
+.mcu .led.fault { fill: #4a2424; }
+.mcu .led.fault.on { fill: #ff3b30; filter: drop-shadow(0 0 3px #ff3b30); }
 
 /* ---------- Small screens ---------- */
 @media (max-width: 900px) {
@@ -305,6 +331,8 @@ tbody th { font-weight: 500; width: 32%; background: var(--zebra); }
     .otc-grid { grid-template-columns: 1fr; }
     .otc { border-right: 0; border-bottom: 1px solid var(--rule); min-height: 0; }
     .about .facts { grid-template-columns: 1fr; }
+    .keepy { grid-template-columns: 1fr; justify-items: center; }
+    .field { width: 100%; }
     .timeline { grid-template-columns: 1fr; }
     .timeline dt { border-bottom: 0; padding-bottom: 0; }
     .pintable td:nth-child(3), .pintable th:nth-child(3) { display: none; }

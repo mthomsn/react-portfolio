@@ -28,14 +28,6 @@ export default function Home() {
                 </div>
             </div>
 
-            <section className="apps-top">
-                <H id="applications">Typical Applications</H>
-                <p className="lede">Each project has its own application report. Open one for the details.</p>
-                <div className="grid">
-                    {projects.map((p) => <Tile key={p.slug} project={p} />)}
-                </div>
-            </section>
-
             <div className="front">
                 <section>
                     <H id="description">Description</H>
@@ -66,6 +58,14 @@ export default function Home() {
                     <ul className="features">{features.map((f) => <li key={f}>{f}</li>)}</ul>
                 </section>
             </div>
+
+            <section className="apps-top">
+                <H id="applications">Typical Applications</H>
+                <p className="lede">Each project has its own application report. Open one for the details.</p>
+                <div className="grid">
+                    {projects.map((p) => <Tile key={p.slug} project={p} />)}
+                </div>
+            </section>
 
             <section>
                 <H id="pinout">Pin Configuration and Functions</H>

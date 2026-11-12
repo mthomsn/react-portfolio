@@ -18,7 +18,7 @@ export const features = [
     'Python, C, Go and JavaScript',
     'Breaks hard problems into pieces; tests ideas early',
     'Field-proven in hospital supply chain: −80% bills on hold',
-    'Runs on soccer',
+    'Peripherals: one soccer ball, one kitchen',
 ];
 
 // 4 Pin configuration. Pins 1–8 run down the left side, 9–16 up the right,
