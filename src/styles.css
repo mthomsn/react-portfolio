@@ -286,7 +286,7 @@ tbody th { font-weight: 500; width: 32%; background: var(--zebra); }
 
 .keepy-fig { margin: 40px 0 0; display: flex; flex-direction: column; align-items: center; gap: 6px; }
 .keepy-fig figcaption { font-size: 0.78rem; color: var(--muted); }
-.keepy { display: grid; grid-template-columns: minmax(0, 1fr) 220px; gap: 20px; align-items: end; width: 100%; max-width: 640px; }
+.keepy { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 20px; align-items: end; width: 100%; max-width: 680px; }
 .field { position: relative; border-bottom: 2px solid var(--rule); touch-action: manipulation; user-select: none;
     background: repeating-linear-gradient(90deg, transparent 0 23px, var(--hair) 23px 24px) bottom / 100% 8px no-repeat; }
 .ball { position: absolute; left: 0; bottom: 0; width: 34px; height: 34px; padding: 0; font-size: 30px; line-height: 34px;
@@ -295,10 +295,12 @@ tbody th { font-weight: 500; width: 32%; background: var(--zebra); }
 .ball::before { content: ''; position: absolute; inset: -22px; border-radius: 50%; }
 .ball:focus-visible { outline: 2px solid var(--signal); outline-offset: 2px; border-radius: 50%; }
 .field-hint { position: absolute; left: 0; right: 0; top: 40%; text-align: center; font-family: var(--mono); font-size: 0.72rem; color: var(--soft); pointer-events: none; }
-.mcu { width: 220px; height: auto; display: block; }
+.mcu { width: 260px; max-width: 100%; height: auto; display: block; }
 .mcu .pcb { fill: var(--fig-bg); stroke: var(--rule); stroke-width: 1.5; }
 .mcu .hole { fill: var(--paper); stroke: var(--soft); }
-.mcu .trace { fill: none; stroke: var(--signal); stroke-width: 1.5; opacity: 0.55; }
+.mcu .trace { fill: none; stroke: var(--signal); stroke-width: 1.6; stroke-linejoin: round; opacity: 0.6; }
+.mcu .pad { fill: var(--soft); }
+.mcu .via { fill: var(--fig-bg); stroke: var(--signal); stroke-width: 1.4; opacity: 0.8; }
 .mcu .ic { fill: #1b1d22; }
 .mcu .ic-dot { fill: #3a3e47; }
 .mcu .lead { fill: var(--soft); }

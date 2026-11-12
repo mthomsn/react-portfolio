@@ -51,39 +51,64 @@ function Digit({ ch, x }) {
     );
 }
 
-function Board({ count, best, blink, fault }) {
-    const text = fault ? '---' : String(Math.min(count, 999)).padStart(3, ' ');
+// Board layout, in SVG units. Every trace starts at the centre of an MCU pin
+// and ends on a pad at the left edge of a display.
+const MCU = { x: 24, y: 45, w: 50, h: 60 };
+const PIN_Y = [51, 63, 75, 87, 99];                       // pin centres, both sides
+const DISP = { x: 150, w: 86, h: 40, touches: 22, best: 88 };
+// [pin y, bend x, pad y]: the outer trace of each pair bends first so they never cross.
+const TRACES = [[51, 100, 36], [63, 112, 48], [99, 100, 114], [87, 112, 102]];
+
+function Display({ y, text, label }) {
+    const digitsW = 14 + 2 * 22;
+    const x0 = DISP.x + (DISP.w - digitsW) / 2;
     return (
-        <svg className="mcu" viewBox="0 0 220 130" role="img" aria-label={`Touch counter reads ${count}. Best ${best}.`}>
-            <rect x="1" y="1" width="218" height="128" rx="6" className="pcb" />
-            {[10, 210].map((cx) => [10, 120].map((cy) => <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="3.5" className="hole" />))}
-            {/* traces from the MCU to the display */}
-            {[0, 1, 2, 3].map((i) => <path key={i} d={`M74 ${48 + i * 8} H96 V${36 + i * 6} H118`} className="trace" />)}
+        <g>
+            <text x={DISP.x + DISP.w / 2} y={y - 5} className="silk">{label}</text>
+            <rect x={DISP.x} y={y} width={DISP.w} height={DISP.h} rx="3" className="disp" />
+            <g transform={`translate(${x0} ${y + 8})`}>
+                {[...text].map((ch, i) => <Digit key={i} ch={ch} x={i * 22} />)}
+            </g>
+        </g>
+    );
+}
+
+function Board({ count, best, blink, fault }) {
+    const three = (n) => String(Math.min(n, 999)).padStart(3, ' ');
+    const right = MCU.x + MCU.w;
+    return (
+        <svg className="mcu" viewBox="0 0 260 150" role="img" aria-label={`Touch counter reads ${count}. Best ${best}.`}>
+            <rect x="1" y="1" width="258" height="148" rx="6" className="pcb" />
+            {[[9, 9], [251, 9], [9, 141], [251, 141]].map(([cx, cy]) => <circle key={`${cx}-${cy}`} cx={cx} cy={cy} r="3.5" className="hole" />)}
+
+            {/* traces, drawn first so pins and pads sit on top */}
+            {TRACES.map(([py, bx, dy]) => (
+                <path key={py} d={`M${right + 3} ${py} H${bx} V${dy} H${DISP.x}`} className="trace" />
+            ))}
+            <path d={`M${right + 3} 75 H92`} className="trace" />
+            <circle cx="92" cy="75" r="2.6" className="via" />
+            {TRACES.map(([, , dy]) => <rect key={dy} x={DISP.x - 4} y={dy - 2} width="5" height="4" className="pad" />)}
+
             {/* MCU */}
-            <g transform="translate(22 36)">
-                {[0, 1, 2, 3, 4].map((i) => (
-                    <g key={i}>
-                        <rect x="-6" y={4 + i * 9} width="6" height="3" className="lead" />
-                        <rect x="52" y={4 + i * 9} width="6" height="3" className="lead" />
-                    </g>
-                ))}
-                <rect width="52" height="50" rx="2" className="ic" />
-                <circle cx="7" cy="7" r="2" className="ic-dot" />
-                <text x="26" y="29" className="ic-label">MT-27</text>
-            </g>
-            {/* 7-segment display */}
-            <rect x="118" y="26" width="80" height="44" rx="3" className="disp" />
-            <g transform="translate(130 36)">
-                {[...text].map((ch, i) => <Digit key={i} ch={ch} x={i * 19} />)}
-            </g>
-            <text x="158" y="84" className="silk">TOUCHES</text>
+            {PIN_Y.map((py) => (
+                <g key={py}>
+                    <rect x={MCU.x - 6} y={py - 1.5} width="6" height="3" className="lead" />
+                    <rect x={right} y={py - 1.5} width="6" height="3" className="lead" />
+                </g>
+            ))}
+            <rect x={MCU.x} y={MCU.y} width={MCU.w} height={MCU.h} rx="2" className="ic" />
+            <circle cx={MCU.x + 7} cy={MCU.y + 7} r="2" className="ic-dot" />
+            <text x={MCU.x + MCU.w / 2} y={MCU.y + MCU.h / 2 + 3} className="ic-label">MT-27</text>
+            <text x={MCU.x} y={MCU.y + MCU.h + 14} className="silk silk-l">U1</text>
+
             {/* LEDs */}
-            <circle key={blink} cx="132" cy="104" r="4" className={blink ? 'led tx flash' : 'led tx'} />
-            <text x="140" y="107" className="silk silk-l">TX</text>
-            <circle cx="170" cy="104" r="4" className={fault ? 'led fault on' : 'led fault'} />
-            <text x="178" y="107" className="silk silk-l">DROP</text>
-            <text x="22" y="104" className="silk silk-l">BEST {best}</text>
-            <text x="22" y="22" className="silk silk-l">U1</text>
+            <circle key={blink} cx="26" cy="22" r="4" className={blink ? 'led tx flash' : 'led tx'} />
+            <text x="33" y="25" className="silk silk-l">TX</text>
+            <circle cx="60" cy="22" r="4" className={fault ? 'led fault on' : 'led fault'} />
+            <text x="67" y="25" className="silk silk-l">DROP</text>
+
+            <Display y={DISP.touches} text={fault ? '---' : three(count)} label="TOUCHES" />
+            <Display y={DISP.best} text={three(best)} label="BEST" />
         </svg>
     );
 }
@@ -132,7 +157,7 @@ function KeepyUppy() {
 
     const step = (t) => {
         const b = s.current;
-        const dt = Math.min(0.032, (t - b.last) / 1000);
+        const dt = Math.max(0, Math.min(0.032, (t - b.last) / 1000)); // first frame can be stamped before the kick
         b.last = t;
         const maxX = b.w - BALL;
 
