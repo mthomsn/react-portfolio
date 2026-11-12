@@ -51,16 +51,24 @@ session 7f3a… started
     );
 }
 
-export default function Tile({ project, fig }) {
+// A card: picture in an inset panel, the title and one-line summary, then a row
+// of tags so a skimmer sees the category and stack without opening it.
+export default function Tile({ project }) {
+    const { slug, title, subtitle, category, year, stack } = project;
     return (
-        <Link to={`/work/${project.slug}`} className="tile">
+        <Link to={`/work/${slug}`} className="tile">
             <div className="tile-media">
                 <TileArt project={project} />
             </div>
             <div className="tile-meta">
-                <span className="fig-num">{fig}</span>
-                <span className="tile-title">{project.title}</span>
-                <span className="tile-cat">{project.category} · {project.year} →</span>
+                <span className="tile-title">{title}</span>
+                <span className="tile-sub">{subtitle}</span>
+            </div>
+            <div className="tile-tags">
+                <span className="tag tag-cat">{category}</span>
+                {stack.slice(0, 2).map((s) => <span key={s} className="tag">{s}</span>)}
+                <span className="tile-year">{year}</span>
+                <span className="tile-go" aria-hidden="true">→</span>
             </div>
         </Link>
     );

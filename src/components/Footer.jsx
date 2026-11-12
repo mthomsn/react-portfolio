@@ -83,13 +83,13 @@ export default function Footer() {
                     {links.map((l) => (
                         <a key={l.label} href={l.href} target="_blank" rel="noreferrer">{l.label}</a>
                     ))}
-                    <Link to="/off-the-clock">AN-01 Off the clock</Link>
+                    <Link to="/off-the-clock">Off the clock</Link>
                 </span>
                 <span className="muted">Built by Matt between classes, cold-flow tests and soccer · Last updated {__BUILD_DATE__}</span>
             </div>
             <figure className="keepy-fig">
                 <KeepyUppy />
-                <figcaption>Figure 9-1. Keepy-uppy test fixture</figcaption>
+                <figcaption>Keepy-uppy test fixture</figcaption>
             </figure>
         </footer>
     );

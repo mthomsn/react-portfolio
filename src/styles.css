@@ -60,13 +60,12 @@ h1 { font-weight: 600; letter-spacing: -0.02em; line-height: 1.05; margin: 0; }
 .subtitle { color: var(--muted); font-size: 1.1rem; margin: 6px 0 28px; }
 .report-kind { font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--signal); margin: 0; font-weight: 500; }
 
-/* Datasheet section headings: "4  Pin Configuration and Functions" */
+/* Datasheet section headings */
 .sec {
     display: flex; align-items: baseline; gap: 14px;
     font-size: 1.15rem; font-weight: 600; letter-spacing: -0.005em;
     margin: 0 0 16px; padding-bottom: 6px; border-bottom: 2px solid var(--rule);
 }
-.sec-n { font-family: var(--mono); font-weight: 600; color: var(--signal); min-width: 1.2em; }
 .sub { font-size: 0.98rem; font-weight: 600; margin: 24px 0 8px; }
 .hint { font-family: var(--mono); font-size: 0.75rem; color: var(--soft); margin: -8px 0 8px; }
 
@@ -110,12 +109,9 @@ h1 { font-weight: 600; letter-spacing: -0.02em; line-height: 1.05; margin: 0; }
 /* Front page: features | applications, then description */
 .front { display: grid; grid-template-columns: 1fr 1fr; gap: 0 48px; }
 .front > section { margin-top: 36px; }
-.front-wide { grid-column: 1 / -1; display: grid; grid-template-columns: 1.4fr 1fr; gap: 0 48px; }
-.front-wide .sec { grid-column: 1 / -1; }
-.features, .apps { margin: 0; padding-left: 1.1em; }
-.features li, .apps li { margin-bottom: 6px; }
+.features { margin: 0; padding-left: 1.1em; }
+.features li { margin-bottom: 6px; }
 .features li::marker { color: var(--signal); }
-.apps li::marker { content: '▸  '; color: var(--signal); }
 .desc p { margin: 0 0 12px; }
 
 /* Tables */
@@ -159,12 +155,22 @@ tbody th { font-weight: 500; width: 32%; background: var(--zebra); }
 .pintable tbody tr.hot td:nth-child(2) { color: var(--signal); }
 
 /* ---------- Figure tiles ---------- */
-.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
-.tile { display: block; color: var(--ink); }
-.tile:hover { text-decoration: none; }
+.lede { color: var(--muted); margin: -4px 0 20px; }
+.apps-top { margin-top: 36px; }
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+/* Card pattern from Collect UI: image in an inset panel, tag pills underneath.
+   Hover lifts the card onto a hard offset shadow, like a part pulled off the sheet. */
+.tile {
+    display: flex; flex-direction: column; gap: 12px; padding: 10px;
+    color: var(--ink); background: var(--sheet);
+    border: 1px solid var(--rule); border-radius: 6px;
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.tile:hover, .tile:focus-visible { text-decoration: none; transform: translate(-3px, -3px); box-shadow: 6px 6px 0 var(--signal); }
 .tile-media {
-    aspect-ratio: 4 / 3; overflow: hidden; position: relative;
-    border: 1px solid var(--rule); background: var(--fig-bg);
+    aspect-ratio: 16 / 10; overflow: hidden; position: relative; border-radius: 3px;
+    border: 1px solid var(--hair); background: var(--fig-bg);
     background-image: linear-gradient(var(--hair) 1px, transparent 1px), linear-gradient(90deg, var(--hair) 1px, transparent 1px);
     background-size: 24px 24px; background-position: -1px -1px;
 }
@@ -187,11 +193,16 @@ tbody th { font-weight: 500; width: 32%; background: var(--zebra); }
 .term-bar i { width: 8px; height: 8px; border-radius: 50%; background: #4a4e57; }
 .term pre { margin: 0; padding: 12px 14px; font: 0.72rem/1.6 var(--mono); color: #d3d6dc; white-space: pre-wrap; }
 
-.tile-meta { display: grid; grid-template-columns: auto 1fr; gap: 0 12px; padding: 10px 0 0; }
-.fig-num { font-family: var(--mono); font-size: 0.78rem; font-weight: 600; color: var(--signal); padding-top: 2px; white-space: nowrap; }
-.tile-title { font-weight: 600; }
-.tile-cat { grid-column: 2; font-size: 0.85rem; color: var(--muted); }
+.tile-meta { display: flex; flex-direction: column; gap: 2px; padding: 0 4px; }
+.tile-title { font-weight: 600; font-size: 1.05rem; }
+.tile-sub { font-size: 0.9rem; color: var(--muted); }
 .tile:hover .tile-title { color: var(--signal); }
+.tile-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding: 10px 4px 2px; border-top: 1px dotted var(--hair); margin-top: auto; }
+.tag { font-family: var(--mono); font-size: 0.7rem; letter-spacing: 0.03em; padding: 2px 9px; border: 1px solid var(--hair); border-radius: 999px; color: var(--muted); background: var(--paper); }
+.tag-cat { text-transform: uppercase; color: var(--ink); border-color: var(--ink); }
+.tile-year { margin-left: auto; font-family: var(--mono); font-size: 0.72rem; color: var(--soft); }
+.tile-go { font-family: var(--mono); color: var(--signal); transition: transform 0.18s ease; }
+.tile:hover .tile-go { transform: translateX(3px); }
 
 /* ---------- Work ---------- */
 .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 28px; }
@@ -204,11 +215,9 @@ tbody th { font-weight: 500; width: 32%; background: var(--zebra); }
 .toc ol { list-style: none; margin: 0; padding: 0; }
 .toc li a { display: flex; gap: 10px; padding: 4px 0; color: var(--muted); border-bottom: 1px dotted var(--hair); }
 .toc li a:hover { color: var(--ink); text-decoration: none; }
-.toc li a.on { color: var(--ink); font-weight: 500; }
-.toc li a.on .toc-n { color: var(--signal); }
-.toc-n { font-family: var(--mono); color: var(--soft); min-width: 1em; }
+.toc li a.on { color: var(--ink); font-weight: 500; box-shadow: inset 2px 0 0 var(--signal); padding-left: 8px; }
 
-.case-body { max-width: 780px; counter-reset: fig; }
+.case-body { max-width: 780px; }
 .case-body > h1 { font-size: clamp(2rem, 4.5vw, 3rem); margin-top: 8px; text-wrap: balance; }
 .case-hero { position: relative; aspect-ratio: 16 / 9; border: 1px solid var(--rule); background: var(--fig-bg);
     background-image: linear-gradient(var(--hair) 1px, transparent 1px), linear-gradient(90deg, var(--hair) 1px, transparent 1px);
@@ -225,11 +234,10 @@ tbody th { font-weight: 500; width: 32%; background: var(--zebra); }
 .prose li { margin-bottom: 6px; }
 .prose li::marker { color: var(--signal); }
 
-.fig { margin: 22px 0; counter-increment: fig; }
+.fig { margin: 22px 0; }
 .fig img { width: 100%; max-width: 480px; background: #fff; border: 1px solid var(--rule); }
 .fig-wide img { max-width: 100%; }
 .fig figcaption { font-size: 0.85rem; color: var(--muted); margin-top: 8px; }
-.fig figcaption::before { content: 'Figure ' counter(fig) '. '; font-weight: 600; color: var(--ink); }
 
 .next { display: block; margin-top: 64px; padding: 20px 0; border-top: 2px solid var(--rule); border-bottom: 2px solid var(--rule); color: var(--ink); }
 .next:hover { text-decoration: none; }
@@ -291,7 +299,7 @@ tbody th { font-weight: 500; width: 32%; background: var(--zebra); }
     .docnav { gap: 12px; font-size: 0.82rem; white-space: nowrap; }
     .docnav a:first-child { display: none; }
     .docbar-inner { gap: 12px; }
-    .front, .front-wide { grid-template-columns: 1fr; }
+    .front { grid-template-columns: 1fr; }
     .devinfo { margin-top: 12px; }
     .grid { grid-template-columns: 1fr; }
     .otc-grid { grid-template-columns: 1fr; }

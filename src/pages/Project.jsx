@@ -36,11 +36,11 @@ export default function Project() {
                 <Link to="/work" className="toc-back">← Applications</Link>
                 <p className="toc-head">Contents</p>
                 <ol>
-                    {toc.map((s, j) => (
+                    {toc.map((s) => (
                         <li key={s.id}>
                             <a href={`#${s.id}`} className={active === s.id ? 'on' : ''}
                                onClick={(e) => { e.preventDefault(); document.getElementById(s.id)?.scrollIntoView({ behavior: 'smooth' }); }}>
-                                <span className="toc-n">{j}</span>{s.title}
+                                {s.title}
                             </a>
                         </li>
                     ))}
@@ -48,7 +48,7 @@ export default function Project() {
             </aside>
 
             <article className="case-body">
-                <p className="report-kind">Application Report · MT27-AR-{String(i + 1).padStart(2, '0')}</p>
+                <p className="report-kind">Application Report · {p.category}</p>
                 <h1>{p.title}</h1>
                 <p className="subtitle">{p.subtitle}</p>
 
@@ -57,7 +57,7 @@ export default function Project() {
                 </div>
 
                 <section id="overview" className="abstract">
-                    <h2 className="sec"><span className="sec-n">0</span>Abstract</h2>
+                    <h2 className="sec">Abstract</h2>
                     <p>{p.overview}</p>
                     <table className="spec">
                         <tbody>
@@ -70,9 +70,9 @@ export default function Project() {
                     </table>
                 </section>
 
-                {p.sections.map((x, k) => (
+                {p.sections.map((x) => (
                     <section key={x.id} id={x.id} className="case-section">
-                        <h2 className="sec"><span className="sec-n">{k + 1}</span>{x.title}</h2>
+                        <h2 className="sec">{x.title}</h2>
                         <div className="prose">{x.body}</div>
                     </section>
                 ))}

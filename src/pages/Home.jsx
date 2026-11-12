@@ -5,8 +5,8 @@ import Tile from '../components/Tile';
 import { projects } from '../projects';
 import { features, pins, absMax, recommended, revisions, email, links } from '../site';
 
-function H({ n, id, children }) {
-    return <h2 id={id} className="sec"><span className="sec-n">{n}</span>{children}</h2>;
+function H({ id, children }) {
+    return <h2 id={id} className="sec">{children}</h2>;
 }
 
 export default function Home() {
@@ -28,22 +28,17 @@ export default function Home() {
                 </div>
             </div>
 
+            <section className="apps-top">
+                <H id="applications">Typical Applications</H>
+                <p className="lede">Each project has its own application report. Open one for the details.</p>
+                <div className="grid">
+                    {projects.map((p) => <Tile key={p.slug} project={p} />)}
+                </div>
+            </section>
+
             <div className="front">
                 <section>
-                    <H n="1" id="features">Features</H>
-                    <ul className="features">{features.map((f) => <li key={f}>{f}</li>)}</ul>
-                </section>
-                <section>
-                    <H n="2" id="applications">Applications</H>
-                    <ul className="apps">
-                        {projects.map((p) => (
-                            <li key={p.slug}><Link to={`/work/${p.slug}`}>{p.title}</Link></li>
-                        ))}
-                        <li><Link to="/off-the-clock">Off-the-clock use (soccer, cooking)</Link></li>
-                    </ul>
-                </section>
-                <section className="front-wide">
-                    <H n="3" id="description">Description</H>
+                    <H id="description">Description</H>
                     <div className="desc">
                         <p>
                             The MT-27 is a student engineer at UT Dallas who writes the software
@@ -66,10 +61,14 @@ export default function Home() {
                         </tbody>
                     </table>
                 </section>
+                <section>
+                    <H id="features">Features</H>
+                    <ul className="features">{features.map((f) => <li key={f}>{f}</li>)}</ul>
+                </section>
             </div>
 
             <section>
-                <H n="4" id="pinout">Pin Configuration and Functions</H>
+                <H id="pinout">Pin Configuration and Functions</H>
                 <div className="pinout">
                     <div className="pkg-wrap">
                         <Chip active={pin} onHover={setPin} />
@@ -95,13 +94,13 @@ export default function Home() {
             </section>
 
             <section>
-                <H n="5" id="specs">Specifications</H>
-                <h3 className="sub">5.1 Absolute Maximum Ratings</h3>
+                <H id="specs">Specifications</H>
+                <h3 className="sub">Absolute Maximum Ratings</h3>
                 <table className="spec">
                     <thead><tr><th>Parameter</th><th>Max</th><th>Unit</th></tr></thead>
                     <tbody>{absMax.map(([a, b, c]) => <tr key={a}><td>{a}</td><td>{b}</td><td>{c}</td></tr>)}</tbody>
                 </table>
-                <h3 className="sub">5.2 Recommended Operating Conditions</h3>
+                <h3 className="sub">Recommended Operating Conditions</h3>
                 <table className="spec">
                     <thead><tr><th>Parameter</th><th>Min</th><th>Max</th><th>Unit</th></tr></thead>
                     <tbody>{recommended.map(([a, b, c, d]) => <tr key={a}><td>{a}</td><td>{b}</td><td>{c}</td><td>{d}</td></tr>)}</tbody>
@@ -109,14 +108,7 @@ export default function Home() {
             </section>
 
             <section>
-                <H n="6" id="typical">Typical Applications</H>
-                <div className="grid">
-                    {projects.map((p, i) => <Tile key={p.slug} project={p} fig={`Figure 6-${i + 1}`} />)}
-                </div>
-            </section>
-
-            <section>
-                <H n="7" id="revisions">Revision History</H>
+                <H id="revisions">Revision History</H>
                 <table className="spec revs">
                     <thead><tr><th>Rev</th><th>Date</th><th>Changes</th></tr></thead>
                     <tbody>{revisions.map((r) => <tr key={r.rev}><td className="mono">{r.rev}</td><td>{r.date}</td><td>{r.change}</td></tr>)}</tbody>
@@ -124,7 +116,7 @@ export default function Home() {
             </section>
 
             <section>
-                <H n="8" id="ordering">Ordering Information</H>
+                <H id="ordering">Ordering Information</H>
                 <table className="spec">
                     <thead><tr><th>Orderable part</th><th>Status</th><th>Availability</th><th>Contact</th></tr></thead>
                     <tbody>

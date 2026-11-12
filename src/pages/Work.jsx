@@ -21,7 +21,7 @@ export default function Work() {
                 })}
             </div>
             <div className="grid">
-                {shown.map((p) => <Tile key={p.slug} project={p} fig={`MT27-AR-${String(projects.indexOf(p) + 1).padStart(2, '0')}`} />)}
+                {shown.map((p) => <Tile key={p.slug} project={p} />)}
             </div>
         </div>
     );

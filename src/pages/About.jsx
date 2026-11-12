@@ -25,7 +25,7 @@ export default function About() {
                 </p>
             </div>
 
-            <h2 className="sec"><span className="sec-n">7</span>Revision History</h2>
+            <h2 className="sec">Revision History</h2>
             <dl className="timeline">
                 <dt>Now</dt>
                 <dd>Student at UT Dallas · Comet Rocketry</dd>
